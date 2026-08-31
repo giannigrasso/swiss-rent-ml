@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.Python
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Raw dataset (large / redistribute-with-care, downloaded via script)
+data/*.csv
+data/*.zip
+!data/download_data.sh
+
+# Kaggle API credentials — never commit these
+kaggle.json
+.kaggle/
+
+# Environment variables
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
