@@ -13,8 +13,7 @@ env/
 .ipynb_checkpoints/
 
 # Raw dataset (large / redistribute-with-care, downloaded via script)
-data/*.csv
-data/*.zip
+data/*
 !data/download_data.sh
 
 # Kaggle API credentials — never commit these

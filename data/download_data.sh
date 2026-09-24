@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Downloads the ImmoScout24.ch Switzerland Rental Property Dataset from Kaggle.
+# Downloads the ImmoScout24.ch Switzerland Rental Property Dataset from Kaggle,
+# and the GeoNames Switzerland dump (population centers, used for the
+# distance-to-nearest-center feature in 02_multifeature_regression.ipynb).
 #
 # Prerequisites:
 #   1. pip install kaggle   (already in requirements.txt)
@@ -19,4 +21,10 @@ kaggle datasets download \
   -p "$DATA_DIR" \
   --unzip
 
-echo "Dataset downloaded to $DATA_DIR"
+echo "Rental dataset downloaded to $DATA_DIR"
+
+curl -L -o "$DATA_DIR/CH.zip" https://download.geonames.org/export/dump/CH.zip
+unzip -o "$DATA_DIR/CH.zip" CH.txt -d "$DATA_DIR"
+rm "$DATA_DIR/CH.zip"
+
+echo "GeoNames dataset downloaded to $DATA_DIR/CH.txt"
